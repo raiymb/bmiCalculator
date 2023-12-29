@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add your custom styles here */
+        .calculator-image {
+            width: 100%;
+            height: auto;
+            max-width: 600px; /* Adjust the maximum width as needed */
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">BMI App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/history">History</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2 class="text-center">BMI Calculator</h2>
+        <p>Welcome to our BMI calculator! Body Mass Index (BMI) is a widely used indicator of body fat and overall health. It is a measure of your weight in relation to your height. By calculating your BMI, you can get an idea of whether your weight is in a healthy range.</p>
+        <img src="https://www.cdc.gov/healthyweight/images/assessing/bmi-adult-fb-600x315.jpg?_=07167" alt="BMI Calculator" class="mx-auto d-block calculator-image">
+        <h3>How to Use:</h3>
+        <ol>
+            <li><strong>Enter Your Weight:</strong> Input your weight in kilograms or pounds, depending on your preference.</li>
+            <li><strong>Enter Your Height:</strong> Input your height in centimeters or inches.</li>
+            <li><strong>Calculate Your BMI:</strong> Click the "Calculate" button to determine your BMI.</li>
+        </ol>
+
+        <h3>Interpreting Your BMI:</h3>
+        <ul>
+            <li><strong>Underweight:</strong> BMI less than 18.5</li>
+            <li><strong>Normal Weight:</strong> BMI between 18.5 and 24.9</li>
+            <li><strong>Overweight:</strong> BMI between 25 and 29.9</li>
+            <li><strong>Obese:</strong> BMI of 30 or greater</li>
+        </ul>
+
+        <p><strong>Note:</strong> BMI is a general screening tool and does not consider factors such as muscle mass or distribution of fat. Consult with a healthcare professional for a more accurate assessment of your health.</p>
+
+        <p>Remember, a healthy lifestyle involves a balanced diet and regular physical activity. Use this tool as a starting point for your health journey.</p>
+
+        <p><strong>Disclaimer:</strong> This calculator provides general information and should not be used as a substitute for professional medical advice.</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
