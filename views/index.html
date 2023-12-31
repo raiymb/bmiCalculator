@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI Calculator</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/styles.css">
     <style>
         .input-error {
-            border: 1px solid red; /* You can customize the error style here */
+            border: 1px solid red;
             color: red;
         }
 
@@ -74,6 +74,10 @@
         <div id="resultContainer" class="mt-4"></div>
     </div>
     
+    <footer>
+        <p>Batyr Raiymbek, SE-2202</p>
+    </footer>
+
     <script>
         const handleCalculateBMI = async () => {
             const heightInput = document.getElementById('height');
@@ -146,8 +150,8 @@
             return !isNaN(value) && isFinite(value);
         };
     </script>
-    
-    <!--<script type="text/javascript" src="../public/js/bmiCalculator.js"></script>-->
+
+    <script type="text/javascript" src="../public/js/bmiCalculator.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

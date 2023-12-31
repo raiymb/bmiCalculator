@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 connectDb();
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', bmiRoutes);
 
