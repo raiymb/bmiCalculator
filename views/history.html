@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI History</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
 
 </head>
 <body>
@@ -36,35 +35,7 @@
     <p>Batyr Raiymbek, SE-2202</p>
 </footer>
 
-<script>
-    fetch('/hist')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(history => {
-            const historyList = document.getElementById('historyList');
-
-            history.forEach(record => {
-                const listItem = document.createElement('li');
-                listItem.className = 'list-group-item';
-                listItem.innerHTML = `
-                    <p><strong>BMI:</strong> ${record.bmi}</p>
-                    <p><strong>Gender:</strong> ${record.gender}</p>
-                    <p><strong>Timestamp:</strong> ${new Date(record.timestamp).toLocaleString()}</p>
-                `;
-                historyList.appendChild(listItem);
-            });
-        })
-        .catch(error => console.error(error));
-</script>
-
-<script type="text/javascript" src="../public/js/bmiHistory.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/bmiHistory.js"></script>
 
 </body>
 </html>

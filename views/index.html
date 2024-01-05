@@ -5,18 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI Calculator</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../public/css/styles.css">
-    <style>
-        .input-error {
-            border: 1px solid red;
-            color: red;
-        }
-
-        .error-message {
-            color: red;
-            margin-top: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
@@ -78,83 +67,7 @@
         <p>Batyr Raiymbek, SE-2202</p>
     </footer>
 
-    <script>
-        const handleCalculateBMI = async () => {
-            const heightInput = document.getElementById('height');
-            const weightInput = document.getElementById('weight');
-            const heightErrorMessage = document.getElementById('heightErrorMessage');
-            const weightErrorMessage = document.getElementById('weightErrorMessage');
-
-            if (!isValidNumber(heightInput.value) || !isValidNumber(weightInput.value)) {
-                alert('Please enter valid numbers for height and weight.');
-                return;
-            }
-
-            heightInput.classList.remove('input-error');
-            weightInput.classList.remove('input-error');
-            heightErrorMessage.textContent = '';
-            weightErrorMessage.textContent = '';
-
-            const height = parseFloat(heightInput.value);
-            const weight = parseFloat(weightInput.value);
-            const age = parseInt(document.getElementById('age').value);
-            const gender = document.getElementById('gender').value;
-            const units = document.getElementById('units').value;
-    
-            if (height === 0) {
-                heightInput.classList.add('input-error');
-                heightErrorMessage.textContent = 'Height must be greater than 0.';
-            }
-
-            if (weight === 0) {
-                weightInput.classList.add('input-error');
-                weightErrorMessage.textContent = 'Weight must be greater than 0.';
-            }
-
-            if (height === 0 || weight === 0) {
-                alert('Height and weight must be greater than 0.');
-                return;
-            }
-    
-            const formData = {
-                height: height,
-                weight: weight,
-                age: age,
-                gender: gender,
-                unit: units
-            };
-    
-            try {
-                const response = await fetch('/calculate-bmi', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
-                });
-    
-                if (!response.ok) {
-                    throw new Error('Failed to calculate BMI');
-                }
-    
-                const result = await response.json();
-    
-                const resultContainer = document.getElementById('resultContainer');
-                resultContainer.innerHTML = `<p>BMI Result: ${result.bmi}</p><p>Interpretation: ${result.interpretation}</p>`;
-            } catch (error) {
-                console.error('Error:', error);
-            }
-        };
-
-        const isValidNumber = (value) => {
-            return !isNaN(value) && isFinite(value);
-        };
-    </script>
-
-    <script type="text/javascript" src="../public/js/bmiCalculator.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/bmiCalculator.js"></script>
 
 </body>
 </html>
