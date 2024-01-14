@@ -1,9 +1,26 @@
 const handleCalculateBMI = async () => {
+    resetErrorMessages();
+
     const height = parseFloat(document.getElementById('height').value);
     const weight = parseFloat(document.getElementById('weight').value);
     const age = parseInt(document.getElementById('age').value);
     const gender = document.getElementById('gender').value;
     const units = document.getElementById('units').value;
+
+    if (isNaN(height) || height <= 0) {
+        displayErrorMessage('heightErrorMessage', 'Height must be a positive number.');
+        return;
+    }
+
+    if (isNaN(weight) || weight <= 0) {
+        displayErrorMessage('weightErrorMessage', 'Weight must be a positive number.');
+        return;
+    }
+
+    if (isNaN(age) || age < 2) {
+        displayErrorMessage('ageErrorMessage', 'Age must be a number greater than or equal to 2.');
+        return;
+    }
 
     const formData = {
         height: height,
@@ -34,3 +51,15 @@ const handleCalculateBMI = async () => {
         console.error('Error:', error);
     }
 };
+
+function displayErrorMessage(elementId, errorMessage) {
+    const errorElement = document.getElementById(elementId);
+    errorElement.innerHTML = `<p class="error">${errorMessage}</p>`;
+}
+
+function resetErrorMessages() {
+    const errorElements = document.querySelectorAll('.error-message');
+    errorElements.forEach((element) => {
+        element.innerHTML = '';
+    });
+}
