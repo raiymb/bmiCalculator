@@ -4,7 +4,9 @@
 1) Install Node.js dependencies:
   npm install
 2) Create a .env file in the project root and add the following MongoDB connection string:
+
   MONGODB_URI=mongodb+srv://<username>:<password>@<cluster-address>/<database-name>?retryWrites=true&w=majority
+    
   Replace <username>, <password>, <cluster-address>, and <database-name> with your MongoDB Atlas credentials.
 3) Start the application:
   npm start
